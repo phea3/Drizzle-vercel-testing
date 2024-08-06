@@ -1,10 +1,6 @@
-import { createClient } from "@vercel/postgres";
-import { drizzle } from "drizzle-orm/vercel-postgres";
+import { Pool } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-serverless";
 
-// Create a client instance with the connection string
-const client = createClient({
-  connectionString: process.env.POSTGRES_URL,
-});
+const pool = new Pool({ connectionString: process.env.POSTGRES_URL! });
 
-// Use drizzle with the client instance
-export const db = drizzle(client);
+export const db = drizzle(pool);
