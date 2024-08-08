@@ -3,3 +3,9 @@ export type todoType = {
   text: string;
   done: boolean;
 };
+
+export type userType = {
+  id: number;
+  name: string;
+  email: string;
+};

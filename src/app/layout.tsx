@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import { NextUIProvider } from "@nextui-org/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ReactQueryProvider>
-          <div>{children}</div>
+          <NextUIProvider>{children}</NextUIProvider>
         </ReactQueryProvider>
       </body>
     </html>
